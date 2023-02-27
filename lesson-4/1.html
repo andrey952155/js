@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Написать функцию, преобразующую число в объект. Передавая на вход число от 0 до 999,
+надо получить на выходе объект, в котором в соответствующих свойствах описаны единицы,
+десятки и сотни. Например, для числа 245 надо получить следующий объект: {‘единицы’: 5,
+‘десятки’: 4, ‘сотни’: 2}. Если число превышает 999, необходимо выдать соответствующее
+сообщение с помощью console.log и вернуть пустой объект.
+-->
+<script>
+  "use strict";
+
+  function NumObject(num) {
+    if (num < 1000) {
+      this.ones = num % 10;
+      this.tens = Math.floor(num/10) % 10;
+      this.hundreds = Math.floor(num/100);
+
+    } else {
+      console.log(`Число превышает 999` + this)
+    }
+  }
+
+  
+const obj = new NumObject(+prompt('Введите трехзначное число: '));
+console.log(`Единицы - ${obj.ones}, Десятки - ${obj.tens}, Сотни - ${obj.hundreds}`)
+console.log(obj)
+
+</script>
+</body>
+</html>
